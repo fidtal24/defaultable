@@ -63,7 +63,7 @@ Use the `InternalDefaultable` base class when you need internal logic for a defa
 ```python
 from defaultable import InternalDefaultable
  
-class InternalComplex(InternalDefaultable):
+class Complex(InternalDefaultable):
     def __init__(self, re: float, im: float):
         self.re = re
         self.im = im
@@ -72,19 +72,17 @@ class InternalComplex(InternalDefaultable):
     def _default(cls):
         return cls(0.0, 0.0)  # Internal default is 0 + 0j
  
-    def __eq__(self, other):
-        return isinstance(other, InternalComplex) and self.re == other.re and self.im == other.im
- 
-    def __repr__(self):
-        return f"({self.re} + {self.im}j)
+    def __bool__(self):
+        default_complex = self._default()
+        return self.im != default_complex.im or self.re != default_complex.re
 ```
  
 Internal usage:
  
 ```python
->>> default_ic = InternalComplex._default()
->>> InternalComplex._is_default(default_ic)
-True
+>>> my_complex = Complex(0, 0)
+>>> bool(my_complex)
+False
 ```
  
 > 🔒 `InternalDefaultable` is designed for internal/private use. Its methods are prefixed with underscores and should not be exposed in public APIs.
