@@ -99,11 +99,11 @@ This project is licensed under the [MIT License](https://opensource.org/licenses
  
 ## 🛠️ Contributing
  
-Contributions are welcome! Feel free to open issues or pull requests on [GitHub](https://github.com/yourusername/defaultable).
+Contributions are welcome! Feel free to open issues or pull requests on [GitHub](https://github.com/fidtal24/defaultable).
  
 ---
  
 ## 🔗 Links
  
 - [PyPI Package](https://pypi.org/project/defaultable/)
-- [GitHub Repository](https://github.com/yourusername/defaultable) <!-- Replace with your repo URL -->
+- [GitHub Repository](https://github.com/fidtal24/defaultable)
